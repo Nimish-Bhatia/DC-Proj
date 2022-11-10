@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     struct sockaddr_in server_addr;
     server_addr.sin_family = AF_INET;
     // server_addr.sin_addr.s_addr = inet_addr(argv[1]); // hardcode to 127.0.0.1
-    server_addr.sin_port = htons(PORT);  
+    server_addr.sin_port = htons(PORT);
     
     
     
