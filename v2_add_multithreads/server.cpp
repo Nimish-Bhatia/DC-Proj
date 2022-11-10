@@ -14,8 +14,6 @@
 #define PORT 8080
 #define MAX_THREADS_AMOUNT 10//at a specific 10 clients at max can be serviced
 
-
-
 void *client_connection_handler(void * socket){
     // get the socket descriptor
     int new_socket = *(int*)socket;
@@ -24,7 +22,7 @@ void *client_connection_handler(void * socket){
     char recv_buf[65536];
     memset(recv_buf, '\0', sizeof(recv_buf));
 
-    while(recv(new_socket, recv_buf, sizeof(recv_buf), 0) > 0 ){
+    while(recv(new_socket, recv_buf, sizeof(recv_buf), 0) > 0 ){    
         printf("Server: recv from client tid(%ld): '%s' \n", pthread_self(), recv_buf);
         memset(recv_buf, '\0', strlen(recv_buf));
         break;
@@ -36,8 +34,6 @@ void *client_connection_handler(void * socket){
     printf("Server: sent to client tid(%ld): '%s'\n", pthread_self(), msg);
    
 }
-
-
  
 int main(int argc, char *argv[]){
     

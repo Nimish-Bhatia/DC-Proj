@@ -14,10 +14,7 @@ int main(int argc, char const *argv[])//used to pass command line arguments
     struct sockaddr_in server_addr;//server address
     server_addr.sin_family = AF_INET;//for establishing in IPC between two or more processes
     server_addr.sin_port = htons(PORT);//specifies PORT to listen on
-    
-    
-    
-
+        
     // Creating socket file descriptor (IPv4, TCP, IP)
     if ((client_socket_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)//socket(domain,type,protocol)
     {
